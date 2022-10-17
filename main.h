@@ -1,32 +1,43 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef _PRINTF_
+#define _PRINTF_
 
-#include <unistd.h>
+
+
 #include <stdarg.h>
-#include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 
-#define NORMAL_STATE 0
-#define LENGTH_STATE 1
-#define SPECIFIER_STATE 2
-
-int _printf(const char *format, ...);
-int _strlen(const char *c);
-int print_char(va_list arg);
-int print_int(va_list arg);
-int print_string(va_list arg);
-int print_percent(va_list arg);
-int _putchar(char c);
 
 /**
- * print_spec - A new struct that matches specifier to the appropriate function
- * @speciier: The key to determine which print function to call
- * @print: Pointing to the appropriate print function based on the specifier
- */
-typedef struct printer
-{
-	char specifier;
-	int (*print)(va_list arg);
-} print_spec;
+* struct convert - defines a structure for symbols and functions
+*
+* @sym: The operator
+* @f: The function associated
+*/
+
+struct cvrt {
+  char *symbol;
+  int (*f)(va_list);
+};
+
+typedef struct cvrt _cvrt;
+
+int _putchar(char);
+int _printf(const char *format, ...);
+int parser(const char *format, _cvrt f_list[], va_list arg_list);
+int p_char(va_list);
+int p_percent(va_list);
+int p_num(va_list);
+int p_int(va_list);
+int p_str(va_list);
+int rot13(va_list);
+int unsigned_int(va_list);
+
+
+unsigned int base_len(unsigned int, int);
+char *rev_str(char *);
+void write_base(char *str);
+char *_memcpy(char *dest, char *src, unsigned int n);
+int p_u_num(unsigned int);
 
 #endif
