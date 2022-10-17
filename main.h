@@ -14,7 +14,7 @@ int print_char(va_list arg);
 int print_int(va_list arg);
 int print_string(va_list arg);
 int print_percent(va_list arg);
-char _putchar(char c);
+int _putchar(char c);
 
 /**
  * print_spec - A new struct that matches specifier to the appropriate function
