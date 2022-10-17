@@ -1,7 +1,4 @@
 #include "main.h"
-#include <stdarg.h>
-#include <stdio.h>
-#include <unistd.h>
 
 /**
  * _strlen - Checks the length of a string
