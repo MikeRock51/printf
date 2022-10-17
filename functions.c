@@ -80,6 +80,12 @@ int print_string(va_list arg)
 	int i;
 
 	str = va_arg(arg, char *);
+
+	if (str == NULL)
+	{
+		str = "(nil)";
+	}
+
 	for (i = 0; i < str[i]; i++)
 	{
 		_putchar(str[i]);
