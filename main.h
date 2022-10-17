@@ -14,17 +14,7 @@ int print_char(va_list arg);
 int print_int(va_list arg);
 int print_string(va_list arg);
 int print_percent(va_list arg);
-
-/**
- * _putchar - Prints a character
- * @c: Character to be printed
- *
- * Return: c as passed
- */
-char _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
+char _putchar(char c);
 
 /**
  * print_spec - A new struct that matches specifier to the appropriate function
