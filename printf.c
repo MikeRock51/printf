@@ -15,8 +15,6 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i, j, length = 0;
 
-	va_start(args, format);
-
 	print_spec specs[] = {
 	{'c', print_char},
 	{'i', print_int},
@@ -25,6 +23,8 @@ int _printf(const char *format, ...)
 	{'%', print_percent},
 	{'\0', NULL}
 	};
+
+	va_start(args, format);
 
 	i = 0;
 	while (format[i])

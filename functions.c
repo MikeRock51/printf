@@ -1,19 +1,7 @@
 #include "main.h"
 #include <stdarg.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <unistd.h>
-
-/**
- * _putchar - Prints a character
- * @c: Character to be printed
- *
- * Return: c as passed
- */
-char _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
 
 /**
  * _strlen - Checks the length of a string
@@ -96,7 +84,7 @@ int print_string(va_list arg)
 	{
 		_putchar(str[i]);
 	}
-	return(i);
+	return (i);
 }
 
 /**
@@ -109,5 +97,5 @@ int print_percent(va_list arg)
 {
 	(void) arg;
 	_putchar('%');
-	return(1);
+	return (1);
 }
