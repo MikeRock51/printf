@@ -60,7 +60,7 @@ int p_int(va_list list)
 /**
  * unsigned_int - Prints an unsigned int in binary
  * @list: List of argument
- * Return: num
+ * Return: number
  */
 int unsigned_int(va_list list)
 {

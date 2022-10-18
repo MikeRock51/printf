@@ -6,7 +6,7 @@
  * @src: Source to copy from
  * @n: Size of bytes to copy
  *
- * Return: dest
+ * Return: The new copied memory bytes
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {

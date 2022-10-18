@@ -3,7 +3,7 @@
 /**
  * p_str_rev - Calls a function to reverse and print a string
  * @arg: Argument passed to the function
- * Return: The amount of characters printed
+ * Return: The length of string printed
  */
 int p_str_rev(va_list arg)
 {

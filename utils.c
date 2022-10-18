@@ -1,14 +1,12 @@
 #include "main.h"
 #include <stdio.h>
 
-
 /**
  * rev_str - reverses a string in place
  *
  * @s: string to reverse
  * Return: A pointer to a character
  */
-
 char *rev_str(char *s)
 {
 	int len;
