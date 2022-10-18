@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * parser - Receives the main string and all the necessary parameters to
  * print a formated string.
@@ -10,45 +11,42 @@
 
 int parser(const char *format, _cvrt f_list[], va_list arg_list)
 {
-  int i, j, r_val, p_chars;
+	int i, j, r_val, p_chars;
 
-  p_chars = 0;
-  for(i = 0; format[i] != '\0'; i++)
-    {
-      if(format[i] == '%')
-      {
-        for(j = 0; f_list[j].symbol != NULL; j++)
-          {
-            if(format[i + 1] == f_list[j].symbol[0])
-            {
-              r_val = f_list[j].f(arg_list);
-              if(r_val == -1)
-                return (-1);
-              p_chars += r_val;
-              break;
-            }
-            
-          }
-        if(f_list[j].symbol == NULL && format[i + 1] != ' ')
-        {
-          if(format[i + 1] != '\0')
-          {
-            _putchar(format[i]);
-            _putchar(format[i + 1]);
-            p_chars = p_chars + 2;
-          }
-          else
-            return (-1);
-        }
-        i = i + 1; 
-      }
-
-      else 
-      {
-        _putchar(format[i]);
-          p_chars++;
-      }
-    }
-
-  return (p_chars);
+	p_chars = 0;
+	for (i = 0; format[i] != '\0'; i++)
+	{
+		if (format[i] == '%')
+		{
+			for (j = 0; f_list[j].symbol != NULL; j++)
+			{
+				if (format[i + 1] == f_list[j].symbol[0])
+				{
+					r_val = f_list[j].f(arg_list);
+					if (r_val == -1)
+						return (-1);
+					p_chars += r_val;
+					break;
+				}
+			}
+			if (f_list[j].symbol == NULL && format[i + 1] != ' ')
+			{
+				if (format[i + 1] != '\0')
+				{
+					_putchar(format[i]);
+					_putchar(format[i + 1]);
+					p_chars = p_chars + 2;
+				}
+				else
+					return (-1);
+			}
+			i = i + 1;
+		}
+		else
+		{
+			_putchar(format[i]);
+			p_chars++;
+		}
+	}
+	return (p_chars);
 }
