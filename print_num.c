@@ -34,11 +34,7 @@ int p_num(va_list args)
       num %= div;
       div /= 10;
     }
-
-  
-
-    
-  
+  return(len);
 }
 
 /**
@@ -46,7 +42,6 @@ int p_num(va_list args)
  * @n: unsigned integer to be printed
  * Return: The amount of numbers printed
  */
-
 
 int p_u_num(unsigned int n)
 {
