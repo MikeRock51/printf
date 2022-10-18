@@ -7,26 +7,29 @@
  */
 int p_char(va_list list)
 {
-  _putchar(va_arg(list, int));
-  return (1);
+	_putchar(va_arg(list, int));
+	return (1);
 }
 
 /**
- * print_string - Prints a string
+ * p_str - Prints a string
  * @list: list of arguments
  * Return: Will return the amount of characters printed.
  */
 int p_str(va_list list)
 {
-  int i;
-  char *str;
+	int i;
+	char *str;
 
-  str = va_arg(list, char *);
-  if(str == NULL)
-    str = "(null)";
-  for(i=0; str[i] != '\0'; i++)
-    _putchar(str[i]);
-  return (i);
+	str = va_arg(list, char *);
+
+	if (str == NULL)
+		str = "(null)";
+
+	for (i = 0; str[i] != '\0'; i++)
+		_putchar(str[i]);
+
+	return (i);
 }
 
 /**
@@ -36,8 +39,8 @@ int p_str(va_list list)
  */
 int p_percent(__attribute__((unused))va_list list)
 {
-  _putchar('%');
-  return (1);
+	 _putchar('%');
+	return (1);
 }
 
 /**
@@ -45,26 +48,31 @@ int p_percent(__attribute__((unused))va_list list)
  * @list: list of arguments
  * Return: Will return the amount of characters printed.
  */
-
 int p_int(va_list list)
 {
-  int num_length;
+	int num_length;
 
-  num_length = p_num(list);
+	num_length = p_num(list);
 
-  return (num_length);
+	return (num_length);
 }
 
+/**
+ * unsigned_int - Prints an unsigned int in binary
+ * @list: List of argument
+ * Return: num
+ */
 int unsigned_int(va_list list)
 {
-  unsigned int num;
+	unsigned int num;
 
-  num = va_arg(list, unsigned int);
+	num = va_arg(list, unsigned int);
 
-  if(num == 0)
-    return (p_u_num(num));
+	if (num == 0)
+		return (p_u_num(num));
 
-  if(num < 1)
-    return (-1);
-  return (p_u_num(num));
+	if (num < 1)
+		return (-1);
+
+	return (p_u_num(num));
 }

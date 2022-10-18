@@ -9,15 +9,15 @@
 
 
 /**
-* struct convert - defines a structure for symbols and functions
-*
-* @sym: The operator
+* struct cvrt - defines a structure for symbols and functions
+* @symbol: The operator
 * @f: The function associated
 */
 
-struct cvrt {
-  char *symbol;
-  int (*f)(va_list);
+struct cvrt
+{
+	char *symbol;
+	int (*f)(va_list);
 };
 
 typedef struct cvrt _cvrt;
@@ -32,6 +32,7 @@ int p_int(va_list);
 int p_str(va_list);
 int rot13(va_list);
 int unsigned_int(va_list);
+int p_str_rev(va_list arg);
 
 
 unsigned int base_len(unsigned int, int);
