@@ -1,49 +1,37 @@
 #include "main.h"
 
 /**
- * _printf - Prints format string
- * @format: Specfier to determine the the how to print arguments
- *
- * Return: The length of string printed
+ * _printf - Receives the main string and all the necessary parameters to
+ * print a formated string
+ * @format: A string containing all the desired characters
+ * Return: A total count of the characters printed
  */
+
 int _printf(const char *format, ...)
 {
-	va_list args;
-	int i, j, length = 0;
+  int p_chars;
+  _cvrt f_list[] ={
+  {"c", p_char},
+  {"s", p_str},
+  {"%", p_percent},
+  {"d", p_int},
+  {"i", p_int},
 
-	print_spec specs[] = {
-	{'c', print_char},
-	{'i', print_int},
-	{'d', print_int},
-	{'s', print_string},
-	{'%', print_percent},
-	{'\0', NULL}
-	};
+  {NULL, NULL}
+  };
 
-	va_start(args, format);
+  va_list arg_list;
 
-	i = 0;
-	while (format[i])
-	{
-		if (format[i] != '%')
-		{
-			write(1, &format[i], 1);
-			i++;
-			length++;
-		}
-		else if (format[i] == '%')
-		{
-			i++;
-			for (j = 0; specs[j].specifier != '\0'; j++)
-			{
-				if (format[i] == (specs[j].specifier))
-				{
-					i++;
-					specs[j].print(args);
-				}
-			}
-		}
-	}
-	va_end(args);
-	return (length);
+  if(format == NULL)
+    return (-1);
+
+
+  va_start(arg_list, format);
+
+  p_chars = parser(format, f_list, arg_list);
+
+  va_end(arg_list);
+
+  return (p_chars);
 }
+
