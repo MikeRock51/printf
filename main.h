@@ -36,6 +36,7 @@ int p_str_rev(va_list arg);
 int p_binary(va_list);
 int p_octal(va_list list);
 int p_hex(va_list list);
+int p_heX(va_list list);
 
 
 
