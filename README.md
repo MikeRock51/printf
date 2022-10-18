@@ -7,7 +7,7 @@ For this project, we explored our newly acquired knowledge in pointers, struct, 
 You can use this function by simply calling _printf("") And passing in the appropriate string or format you would like to print.
 
 Collaborators:
-r
+
 Michael Adebayo Olasunkanmi
 
 Abdullah Clement Abdul Shakur
