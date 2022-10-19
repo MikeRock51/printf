@@ -18,13 +18,17 @@ int _printf(const char *format, ...)
 		{"i", p_int},
 		{"r", p_str_rev},
 		{"R", rot13},
-		{"b", unsigned_int},
+		{"b", p_binary},
 		{"u", unsigned_int},
+		{"o", p_octal},
+		{"x", p_hex},
+		{"X", p_heX},
 
 		{NULL, NULL}
 	};
 
 	va_list arg_list;
+
 	if (format == NULL)
 		return (-1);
 
